@@ -1,0 +1,48 @@
+{
+  "name": "etherscan-label-scraper",
+  "version": "0.0.1",
+  "description": "scrapes address labels from etherscan",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "npm run babel && ./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha",
+    "babel": "mkdir -p build && babel index.js -o build/index.js",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+  },
+  "keywords": [
+    "ethereum",
+    "scraper",
+    "etherscan"
+  ],
+  "author": "Beasta",
+  "license": "MIT",
+  "dependencies": {
+    "superagent": "^5.2.2",
+    "core-js": "^3.6.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "chai": "*",
+    "coveralls": "*",
+    "eslint": "*",
+    "eslint-config-airbnb": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jsx-a11y": "*",
+    "eslint-plugin-react": "*",
+    "istanbul": "*",
+    "mocha": "*",
+    "nock": "^12.0.3",
+    "should": "*",
+    "should-http": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Beasta/etherscan-label-scraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Beasta/etherscan-label-scraper/issues"
+  },
+  "homepage": "https://github.com/Beasta/etherscan-label-scraper#readme"
+}
