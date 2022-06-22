@@ -1,0 +1,9 @@
+node_modules
+.idea
+.travis.yml
+.eslintrc.json
+test
+coverage
+private.js
+bundle.js
+_chromeit.html
