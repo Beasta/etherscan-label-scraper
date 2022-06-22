@@ -11,7 +11,6 @@ npm install etherscan-label-scraper
 [RunKit Example](https://runkit.com/beasta/etherscan-label-scraper)
 ```js
 let addressScraper = await import('etherscan-label-scraper');
-import * as weather from '/Users/barryblaha/Code/etherscan-labels/index.js';
 
 addressScraper = addressScraper.default();
 const address = '0x829bd824b016326a401d083b33d092293333a830';
