@@ -9,10 +9,11 @@ module.exports = function EtherscanLabels() {
   }
   this.grabLabel = (body) => {
     const fullLabelRegex = /\(viewable by anyone\)'>(.*?)</;
-    const fullLabel = body.match(fullLabelRegex)[1];
+    let fullLabel = body.match(fullLabelRegex);
     if (fullLabel === null) { // checking for errors if the div wasn't matched
       return 'There has been an error processing this address (span was not matched in body)';
     }
+    [, fullLabel] = fullLabel;
     if (fullLabel) {
       return { fullLabel };
     }
