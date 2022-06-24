@@ -8,13 +8,13 @@ const EtherscanLabelScraper = require('../build/index.js'); // eslint-disable-li
 
 describe('EtherscanLabelScraper', () => {
   describe('.request', () => {
-    it('should return an error for an invalid body', (done) => {
-      const badBodyResponse = EtherscanLabelScraper().grabLabel('this is a nonsense body;');
-      assert.deepEqual(typeof badBodyResponse, 'string');
-      done();
-    });
     it('should return a label for a labeled ethereum address', (done) => {
-      // test needs to be written for case where there is no labels for an address
+      EtherscanLabelScraper().requestEtherscan('0x829bd824b016326a401d083b33d092293333a830', (err, data) => {
+        assert.equal(!!data, true);
+        done();
+      });
+    });
+    it('should return a \"no etherscan label\" for an unlabeled ethereum address', (done) => {
       EtherscanLabelScraper().requestEtherscan('0x829bd824b016326a401d083b33d092293333a830', (err, data) => {
         assert.equal(!!data, true);
         done();

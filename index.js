@@ -11,7 +11,8 @@ module.exports = function EtherscanLabels() {
     const fullLabelRegex = /\(viewable by anyone\)'>(.*?)</;
     let fullLabel = body.match(fullLabelRegex);
     if (fullLabel === null) { // checking for errors if the div wasn't matched
-      return 'There has been an error processing this address (span was not matched in body)';
+      fullLabel = 'no etherscan label';
+      return { fullLabel };
     }
     [, fullLabel] = fullLabel;
     if (fullLabel) {
