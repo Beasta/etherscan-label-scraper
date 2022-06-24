@@ -1,3 +1,4 @@
+const util = require('node:util');
 const superagent = require('superagent');
 
 // Just checks plausibility
@@ -21,7 +22,7 @@ module.exports = function EtherscanLabels() {
     return 'There has been an error processing this address';
   };
 
-  this.requestEtherscan = (address, callback) => {
+  const requestEtherscan = (address, callback) => {
     if (!address || !isPlausibleAddress(address)) {
       callback('Must enter a valid address');
       return;
@@ -42,4 +43,5 @@ module.exports = function EtherscanLabels() {
         }
       });
   };
+  this.requestEtherscan = util.promisify(requestEtherscan);
 };
