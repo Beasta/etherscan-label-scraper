@@ -14,7 +14,7 @@ describe('EtherscanLabelScraper', () => {
         done();
       });
     });
-    it('should return a \"no etherscan label\" for an unlabeled ethereum address', (done) => {
+    it('should return a "no etherscan label" for an unlabeled ethereum address', (done) => {
       EtherscanLabelScraper().requestEtherscan('0x6fFEbD820d544BE5E76ee2a2913017bE2785658E', (err, data) => {
         assert.equal(data.fullLabel, 'no etherscan label');
         done();
