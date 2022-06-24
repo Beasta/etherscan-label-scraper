@@ -1,6 +1,6 @@
 {
   "name": "etherscan-label-scraper",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "scrapes address labels from etherscan",
   "main": "index.js",
   "scripts": {
