@@ -1,6 +1,4 @@
 # etherscan-label-scraper
-<br />
-[![NPM](https://nodei.co/npm/etherscan-label-scraper.png)](https://nodei.co/npm/etherscan-label-scraper/)
 Retrieve the etherscan label for a specific ethereum address. No API keys required! Its unfortunate that Etherscan won't provide API access to this information.
 ## Installation
 
