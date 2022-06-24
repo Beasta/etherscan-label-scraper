@@ -9,16 +9,15 @@ npm install etherscan-label-scraper
 ```
 
 ## Usage
-[RunKit Example](https://runkit.com/beasta/etherscan-label-scraper)
 ```js
-let addressScraper = await import('etherscan-label-scraper');
-
-addressScraper = addressScraper.default();
-const address = '0x829bd824b016326a401d083b33d092293333a830';
-const log = (...args) => console.log(args[1].fullLabel)
-
-addressScraper.requestEtherscan(address, log);
-// F2Pool Old
+async function f() {
+    let addressScraper = await import('etherscan-label-scraper');
+    addressScraper = addressScraper.default();
+    const address = '0x829bd824b016326a401d083b33d092293333a830';
+    console.log(await addressScraper.requestEtherscan(address));
+    // { fullLabel: 'F2Pool Old' }
+}
+f();
 ```
 ## Running the tests
 
