@@ -14,9 +14,10 @@ let addressScraper = await import('etherscan-label-scraper');
 
 addressScraper = addressScraper.default();
 const address = '0x829bd824b016326a401d083b33d092293333a830';
+const log = (...args) => console.log(args[1].fullLabel)
 
-addressScraper.requestEtherscan(address, console.log);
-// null { fullLabel: 'F2Pool Old' }
+addressScraper.requestEtherscan(address, log);
+// F2Pool Old
 ```
 ## Running the tests
 
