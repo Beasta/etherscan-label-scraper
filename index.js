@@ -4,12 +4,12 @@ const superagent = require('superagent');
 // Just checks plausibility
 const isPlausibleAddress = (address) => (/^(0x){1}[0-9a-fA-F]{40}$/i.test(address));
 
-module.exports = function EtherscanLabels() {
+module.exports = function EtherscanLabels(baseEtherscanUrl = 'https://etherscan.io') {
   if (!(this instanceof EtherscanLabels)) {
     return new EtherscanLabels();
   }
   this.grabLabel = (body) => {
-    const fullLabelRegex = /\(viewable by anyone\)'>(.*?)</;
+    const fullLabelRegex = /\(viewable by anyone\) <br\/> (.*?)"/;
     let fullLabel = body.match(fullLabelRegex);
     if (fullLabel === null) { // checking for errors if the div wasn't matched
       fullLabel = 'no etherscan label';
@@ -28,7 +28,7 @@ module.exports = function EtherscanLabels() {
       return;
     }
     superagent
-      .get(`https://etherscan.io/address/${address}`)
+      .get(`${baseEtherscanUrl}/address/${address}`)
       .set('Accept', 'application/json')
       .end((err, res) => {
         if (err) {
